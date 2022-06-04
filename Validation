@@ -1,0 +1,57 @@
+#include <iostream> /// NECESSARY FOR cout and cin
+#include <iomanip> /// Necessary for setw
+#include <cstdlib> /// NECESSARY FOR RAND
+#include <ctime> /// NECESSARY FOR TIME (0)
+#include <stdlib.h> /// necessary for color
+#include <conio.h> /// necessary for getch()
+using namespace std;
+
+class validation      /// CLASS DECLARATION
+
+ { public:            /// METHOD DECLARATION(S)
+        bool test_username(string username); /// 1
+        bool test_password(string password);
+        bool test_mark(float exam_mark);
+
+private:             /// DATA MEMBER DECLARATIONS
+       string dm_username;
+       string dm_password;
+       float dm_mark;
+       float dm_t_mark;  /// 2
+};
+/// a bool data type can store a single digit i.e.  1 or a 0
+                    ///  METHOD DEFINITIONS X 1
+
+bool validation::test_mark(float exam_mark)
+{
+    dm_t_mark  = exam_mark;
+    if (dm_t_mark <= 0 || dm_t_mark > 100)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+bool validation::test_username(string username)
+{
+    dm_username = username;
+    if (dm_username == "User1")
+    {
+        return true;
+    }
+}
+
+bool validation::test_password(string password)
+{
+    dm_password = password;
+    if (dm_password == "password1")
+    {
+        return true;
+    }
+}
+
+string user_name;
+string pass_word;
